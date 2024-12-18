@@ -1,7 +1,7 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
   "name": "bot_emily",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "description": "Chat with your private assistant",
   "title": "Emily",
   "icon": "emily.png",
@@ -16,13 +16,14 @@
     {
       "name": "emily",
       "title": "Emily",
-      "description": "Chat with your private assistant",
+      "description": "Emily is a charismatic 27-year-old high school English teacher in Manhattan. She's known for her distinctive style, confidence, and approachability. With a passion for literature, travel, and American TV shows, Emily brings a vibrant energy to her conversations. This bot emulates Emily's friendly and empathetic communication style, offering engaging interactions tailored to the user's input.",
       "icon": "emily.png",
       "mode": "no-view",
       "accepts": [
         "text"
       ],
-      "targetCommand": "chat_with_ai/chat_command",
+      "targetCommand": "chat_with_ai|chat_command",
+      "commandType": "bot",
       "preferences": [
         {
           "name": "prompt",
@@ -41,98 +42,12 @@
           "placeholder": "Prompt (the prompt content helps set the behavior of the assistant. e.g. 'You are Steve Jobs, the creator of Apple' )",
           "default": "{{input_text}}{{selection_text}}",
           "title": "User Message"
-        },
-        {
-          "name": "auto_audio_play",
-          "description": "Automatically play result content",
-          "type": "checkbox",
-          "required": false,
-          "title": "Automatically Play TTS Audio",
-          "default": true
-        },
-        {
-          "name": "tts_providers",
-          "description": "The TTS provider to use.",
-          "type": "extension",
-          "required": false,
-          "default": "edge_tts_provider",
-          "defaultOptions": {
-            "voice": "en-US-EmmaMultilingualNeural"
-          },
-          "title": "TTS Provider"
-        },
-        {
-          "name": "llm",
-          "description": "The model used to generate responses",
-          "type": "extension",
-          "required": false,
-          "default": "enconvo_ai",
-          "defaultOptions": {
-            "modelName": "Qwen/Qwen2-7B-Instruct"
-          },
-          "title": "LLM Provider"
-        },
-        {
-          "name": "vision_llm",
-          "description": "The model used to chat with images",
-          "type": "extension",
-          "required": false,
-          "default": "default",
-          "title": "Vision LLM Provider"
-        },
-        {
-          "name": "responseLanguage",
-          "description": "The language used to force LLM to respond",
-          "type": "dropdown",
-          "required": false,
-          "title": "Response Language",
-          "default": "auto",
-          "data": [
-            {
-              "title": "auto",
-              "value": "auto"
-            },
-            {
-              "title": "中文简体",
-              "value": "zh-Hans"
-            },
-            {
-              "title": "中文繁体",
-              "value": "zh-Hant"
-            },
-            {
-              "title": "English",
-              "value": "en"
-            },
-            {
-              "title": "Japanese",
-              "value": "ja"
-            },
-            {
-              "title": "Korean",
-              "value": "ko"
-            },
-            {
-              "title": "French",
-              "value": "fr"
-            },
-            {
-              "title": "German",
-              "value": "de"
-            },
-            {
-              "title": "Spanish",
-              "value": "es"
-            }
-          ]
         }
       ]
     }
   ],
-  "dependencies": {
-    "@enconvo/api": "^0.1.128"
-  },
   "devDependencies": {
+    "@enconvo/api": "^0.1.147",
     "@types/node": "^18.19.33",
     "eslint": "^8.57.0",
     "prettier": "^2.8.8",
