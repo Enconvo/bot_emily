@@ -1,7 +1,7 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
   "name": "bot_emily",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Chat with your private assistant",
   "title": "Emily",
   "icon": "emily.png",
@@ -19,9 +19,6 @@
       "description": "Emily is a charismatic 27-year-old high school English teacher in Manhattan. She's known for her distinctive style, confidence, and approachability. With a passion for literature, travel, and American TV shows, Emily brings a vibrant energy to her conversations. This bot emulates Emily's friendly and empathetic communication style, offering engaging interactions tailored to the user's input.",
       "icon": "emily.png",
       "mode": "no-view",
-      "accepts": [
-        "text"
-      ],
       "targetCommand": "chat_with_ai|chat_command",
       "commandType": "bot",
       "preferences": [
@@ -47,7 +44,7 @@
     }
   ],
   "devDependencies": {
-    "@enconvo/api": "^0.1.147",
+    "@enconvo/api": "^0.1.161",
     "@types/node": "^18.19.33",
     "eslint": "^8.57.0",
     "prettier": "^2.8.8",
